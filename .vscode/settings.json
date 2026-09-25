@@ -1,0 +1,32 @@
+{
+    // Python 解释器（Windows 常见路径，按你的实际安装改）
+    "python.defaultInterpreterPath": "python",
+
+    // 终端中文输出不乱码（本项目日志含中文）
+    "terminal.integrated.env.windows": {
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUTF8": "1"
+    },
+    "terminal.integrated.env.linux": {
+        "PYTHONIOENCODING": "utf-8"
+    },
+    "terminal.integrated.env.osx": {
+        "PYTHONIOENCODING": "utf-8"
+    },
+
+    // 文件编码统一 UTF-8
+    "files.encoding": "utf8",
+    "files.eol": "\n",
+
+    // 运行 Python 时清屏，输出更干净
+    "python.terminal.launchArgs": [],
+
+    // 排除缓存目录，资源管理器更清爽
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "**/build": true,
+        "**/dist": true,
+        "**/*.spec": true
+    }
+}

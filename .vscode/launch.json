@@ -1,0 +1,94 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "🖥️ 控制端 Controller (教师机)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/controller.py",
+            "args": [],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "💻 被控端 演示机-01",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/agent.py",
+            "args": [
+                "--name",
+                "演示机-01",
+                "--port",
+                "9001"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "💻 被控端 演示机-02",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/agent.py",
+            "args": [
+                "--name",
+                "演示机-02",
+                "--port",
+                "9002"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "💻 被控端 演示机-03",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/agent.py",
+            "args": [
+                "--name",
+                "演示机-03",
+                "--port",
+                "9003"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "🌐 被控端 (局域网真实部署)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/agent.py",
+            "args": [
+                "--name",
+                "学生机01",
+                "--broadcast-ip",
+                "192.168.1.255",
+                "--port",
+                "9000",
+                "--broadcast-port",
+                "9000"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        }
+    ],
+    "compounds": [
+        {
+            "name": "🚀 单机演示 (控制端 + 3台被控端)",
+            "configurations": [
+                "🖥️ 控制端 Controller (教师机)",
+                "💻 被控端 演示机-01",
+                "💻 被控端 演示机-02",
+                "💻 被控端 演示机-03"
+            ],
+            "stopAll": true
+        },
+        {
+            "name": "🚀 最小演示 (控制端 + 1台被控端)",
+            "configurations": [
+                "🖥️ 控制端 Controller (教师机)",
+                "💻 被控端 演示机-01"
+            ],
+            "stopAll": true
+        }
+    ]
+}

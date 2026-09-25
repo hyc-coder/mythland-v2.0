@@ -1,0 +1,22 @@
+# 远控软件依赖
+# 标准库已满足核心需求（socket, threading, json, struct, argparse, uuid, platform）
+# tkinter - Python 自带（Windows 官方安装包需勾选 tcl/tk and IDLE）
+
+# ---- 必需：屏幕采集与图像处理 ----
+pillow      # 图像编码（JPEG 缩略图）、预览墙渲染
+mss         # 高效屏幕截图（可选，缺失时自动降级为模拟画面）
+
+# ---- 键鼠远程控制（被控端需要） ----
+pyautogui   # 首选注入后端，pip install pyautogui
+pynput      # 备选注入后端（pyautogui 装不上时用它）
+
+# ---- 进程管理（被控端需要，缺了会降级为系统命令） ----
+psutil      # 完整进程信息（CPU/内存/状态），pip install psutil
+
+# ---- 可选：打包 exe ----
+pyinstaller
+
+# 一键安装:
+#   pip install -r requirements.txt
+# 最小安装（只想看预览墙效果）:
+#   pip install pillow mss
